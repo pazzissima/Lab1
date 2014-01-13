@@ -1,8 +1,9 @@
 require './animal'
 require './client'
 require './shelter'
+require 'pry'
 
-shelter = Shelter.new("HappiTails")
+shelter = Shelter.new([])
 def menu message
 
 	puts "Please choose from options: \n\n"
@@ -55,10 +56,11 @@ while choice != 'q'
 		print "number of pets:"; pet_count = gets.chomp
 
 		shelter.clients << Client.new(name, children_count, age, pet_count)
-		message = "Added client #{shelter.clients.last.number}"
+		message = "Added client #{shelter.clients.last}"
 
 	when "5"
 		puts "Choose animal for adoption:"
+		# binding.pry
 		shelter.display_animals.each do |animal|
 			puts "#{animal.number}"
 		end
