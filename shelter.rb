@@ -30,6 +30,7 @@ class Shelter
     
         result = result || ""
         puts result
+        result
     end
 end
 
